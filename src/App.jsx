@@ -6,7 +6,8 @@ import OutputComp from "./component/OutputComp";
 import StyledSlider from "./component/StyledSlider";
 import "./index.css"; // Importerer CSS-stilen
 import CurrencyConverter from "./component/CurrencyConverter";
-
+import Background from "./component/Background";
+import Navbar from "./component/Navbar";
 
 function App() {
   const [updatedInputValue, setUpdatedInputValue] = useState(0);
@@ -28,13 +29,13 @@ function App() {
 
   return (
     <>
-      <div className="container">
-        <div className="header lg:w-[565px] p-4 ">
-          <CurrencyConverter />
-        </div>
-
-        <div className="border-2 border-[#3183CC] rounded content">
-          <div className="relative sm:col-span-3 p-4 bg-[#white] w-[358.4px] h-[300px]">
+<div className="container relative flex flexcol items-center justify-center h-screen">
+        <Background />
+        <Navbar />
+       
+        <div className="border-2 border-[#3183CC] rounded-xl content bg-[#f4f4f6]">
+   
+          <div className="relative sm:col-span-3 p-4 w-[358.4px] h-[300px]">
             <Echart updatedInputValue={updatedInputValue} />
             <OutputComp
               updatedInputValue={updatedInputValue}
@@ -54,8 +55,11 @@ function App() {
             </div>
           </div>
         </div>
+        <div>
+          <CurrencyConverter/>
+        </div>
       </div>
-   {/*    <StyledSelector/> */}
+     
     </>
   );
 }

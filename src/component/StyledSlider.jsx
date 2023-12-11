@@ -8,7 +8,7 @@ const CustomSlider = styled(ReactSlider)`
   height: 5px;
   border: 0;
   border-radius: 100px;
-  background: #f6f6f6;
+  background: white;
   outline: none;
   left: 0px;
   margin-bottom: 10px;

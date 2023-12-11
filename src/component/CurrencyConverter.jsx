@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useCurrencyInfo from "../hooks/useCurrencyInfo.js";
-import useNumberFormatter from "../hooks/useNumberformatter.js";
 import InputBox from "./inputBox.jsx";
+import useNumberFormatter from "../hooks/useNumberformatter.js";
 
 function CurrencyConverter() {
   const [amount, setAmount] = useState("");
@@ -9,12 +9,13 @@ function CurrencyConverter() {
   const [to, setTo] = useState("dkk");
   const [convertedAmount, setConvertedAmount] = useState("");
 
-  const { data: currencyInfo, error } = useCurrencyInfo(from); //calling the custom hook
+  const { data: currencyInfo } = useCurrencyInfo(from); //calling the custom hook
   const options = Object.keys(currencyInfo);
 
 //use hook number formatter
 const {formattedNumbers} = useNumberFormatter([convertedAmount])//use the hook
 
+ const formatAmount = (value) => {}
   const swap = () => {
     //swap from and to
     const newFrom = to;
@@ -33,9 +34,9 @@ const {formattedNumbers} = useNumberFormatter([convertedAmount])//use the hook
   };
 
   return (
-    <div className="flex flex-wrap items-center justify-center w-[358.4px] h-[300px] bg-no-repeat bg-cover h-">
+    <div>
       <div className="w-full">
-        <div className="w-full max-w-md p-5 mx-auto border-2 border-[#3183CC] rounded backdrop-blur-sm">
+        <div className=" max-w-md p-5 mx-5 my-5 border-2 border-[#3183CC] rounded-xl bg-[#f4f4f6] w-[358.4px] h-[303px]">
           <form
             onSubmit={(e) => {
               e.preventDefault();

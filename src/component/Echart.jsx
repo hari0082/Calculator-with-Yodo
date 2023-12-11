@@ -25,7 +25,7 @@ const Echart = ({ updatedInputValue }) => {
       /* overflow: "break",
       width: 50 */
     },
-    tooltip: {
+   /*  tooltip: {
       trigger: "axis",
       axisPointer: {
         label: {
@@ -40,7 +40,7 @@ const Echart = ({ updatedInputValue }) => {
           },
         },
       },
-    },
+    }, */
     /* legend: {
       data: ["Free Plan 2.5%", "Good Plan 5%"],
 
