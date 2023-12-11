@@ -29,37 +29,41 @@ function App() {
 
   return (
     <>
-<div className="container relative flex flexcol items-center justify-center h-screen">
+      <div className="">
         <Background />
         <Navbar />
-       
-        <div className="border-2 border-[#3183CC] rounded-xl content bg-[#f4f4f6]">
-   
-          <div className="relative sm:col-span-3 p-4 w-[358.4px] h-[300px]">
-            <Echart updatedInputValue={updatedInputValue} />
-            <OutputComp
-              updatedInputValue={updatedInputValue}
-              selectedPlan={selectedPlan}
-            />
-
-            <StyledSlider
-              value={totalValue}
-              onChangeAmount={handleAmountChange}
-            />
-            <div className="absolute right-0 bottom-56">
-              <CalcButtons
-                handleInputValue={handleInputValue}
-                handlePlanChange={handlePlanChange}
-                totalValue={totalValue}
+        <div className="flex justify-center pt-28 pb-6">
+        <h1 className="text-2xl text-white w-max md:text-4xl font-Montserrat">
+          Invest with Yodo
+        </h1>
+      </div>
+        <div className="container">
+          <div className="border-2 border-[#3183CC] rounded-xl content bg-[#f4f4f6]">
+            <div className="relative sm:col-span-3 p-4 w-[358.4px] h-[300px]">
+              <Echart updatedInputValue={updatedInputValue} />
+              <OutputComp
+                updatedInputValue={updatedInputValue}
+                selectedPlan={selectedPlan}
               />
+
+              <StyledSlider
+                value={totalValue}
+                onChangeAmount={handleAmountChange}
+              />
+              <div className="absolute right-0 bottom-56">
+                <CalcButtons
+                  handleInputValue={handleInputValue}
+                  handlePlanChange={handlePlanChange}
+                  totalValue={totalValue}
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <CurrencyConverter/>
+          <div>
+            <CurrencyConverter />
+          </div>
         </div>
       </div>
-     
     </>
   );
 }
